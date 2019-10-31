@@ -1,0 +1,63 @@
+
+.Navbar {
+  nav {
+    width: 100%;
+    height: 70px;
+    background-color:#263025;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #352c2c;
+    #nome{
+      display: flex;
+      margin-right: 50px;
+    }
+    #menu-hamburguer {
+
+      width: 50px;
+      height: 40%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      span {
+        width: 100%;
+        height: 5px;
+        background-color: white;
+        border-radius: 20px;
+        margin-left: 100px;
+      }
+    }
+  }
+  .menu {
+    font-family: 'Stoke', serif;
+    width: 200px;
+    height: 400px;
+    background-color:#a52a2ae5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(5000px);
+    transition: 0.5s;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    margin-left:130px;
+    border-top: 3px solid #263025;
+    a {
+      font-family: 'Stoke', serif;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a:hover {
+      text-decoration: underline;
+      font-size: 25px;
+    }
+  }
+  .ativo {
+    transform: translateX(0);
+  }
+}
