@@ -4,11 +4,12 @@ import './Genero.scss'
 const Genero = () => {
     return(
         <div >
+            <label className="Label">Gênero</label>
             <select className="Genero">
-            <option disabled selected value="">Escolha o sexo</option>
-            <option value="feminino">Feminino</option>
-            <option value="masculino">Masculino</option>
-            <option value="NDF">Não Definido</option>
+            <option className="escolha" disabled selected value="">Escolha o sexo</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Indefinido">Não Definido</option>
             </select>
         </div>
     )

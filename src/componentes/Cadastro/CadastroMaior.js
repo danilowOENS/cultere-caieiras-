@@ -1,32 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 import Input from "../Input/Input";
 import Genero from "../Genero/Genero.js"
 import "./CadastroMaior.scss";
 
 const CadastroMaior = () => {
-  const [nome, setNome] = React.useState("");
-  const [idade, setIdade] = React.useState("");
-  const [cpf, setCpf] = React.useState("");
-  const [cep, setCep] = React.useState("");
-  const [contato, setContato] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [senha, setSenha] = React.useState("");
+  const [nome, setNome] = useState("");
+  const [idade, setIdade] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [cep, setCep] = useState("");
+  const [contato, setContato] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
 
-  const salvarMaiorDeDezoito = (event) =>{
+  const salvarMaiorDeDezoito = (event) => {
     event.preventDefault();
 
-    fetch('http://127.0.0.1:9000/responsavel/',{
+    fetch('http://127.0.0.1:8000/responsavel/', {
       method: 'POST',
-      body:JSON.stringify({
-        nome: nome,
+      body: JSON.stringify({
+        nome_completo: nome,
         idade: idade,
         cpf: cpf,
         cep: cep,
-        contato:contato,
+        contato: contato,
         email: email,
         senha: senha,
       }),
-      headers:{
+      headers: {
         'Content-Type': 'application/json'
         }
     }).then( value => {
@@ -51,17 +51,20 @@ const CadastroMaior = () => {
 
   return (
     <div className="CadastroMaior">
-      <h1>Faça seu Cadastro</h1>
+       <div className="Texto">
+            <h1>Faça seu Cadastro</h1>
+       </div>
     
       <form onSubmit={salvarMaiorDeDezoito}>
         <Input
           value={nome}
           type="text"
-          label="Nome"
+          label="Nome completo"
           placeholder="Digite seu nome completo"
           atualizarState={setNome}
           obrigatorio
         />
+        < Genero />
          <Input
           value={idade}
           type="text"
@@ -74,7 +77,7 @@ const CadastroMaior = () => {
           value={cpf}
           type="text"
           label="CPF"
-          placeholder="Digite seu cpf"
+          placeholder="Ex.: 00000000000"
           atualizarState={setCpf}
           obrigatorio
         />
@@ -82,16 +85,16 @@ const CadastroMaior = () => {
           value={cep}
           type="text"
           label="Cep"
-          placeholder="Digite seu cep"
+          placeholder="Ex.: 00000000"
           atualizarState={setCep}
           obrigatorio
         />
-       <Genero />
+       
          <Input
           value={contato}
           type="text"
           label="Celular"
-          placeholder="Digite o número do seu celular"
+          placeholder="Ex.: 00000000000"
           atualizarState={setContato}
           obrigatorio
         />
@@ -111,7 +114,7 @@ const CadastroMaior = () => {
           atualizarState={setSenha}
           obrigatorio
         />
-        <input className="LALA" type='submit' value='Cadastrar' />
+      <input className="LALA" type="submit" value={"Cadastrar"} />
       </form>
     </div>
     );
