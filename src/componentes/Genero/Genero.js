@@ -2,7 +2,7 @@ import React from 'react';
 import './Genero.scss'
 
 const Genero = () => {
-    return (
+    return(
         <div >
             <select className="Genero">
             <option disabled selected value="">Escolha o sexo</option>

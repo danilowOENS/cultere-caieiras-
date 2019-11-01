@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Input from "../Input/Input";
 import Genero from "../Genero/Genero.js"
 import "./CadastroMaior.scss";
-import Botao from "../Botao/Botao";
 
 const CadastroMaior = () => {
   const [nome, setNome] = React.useState("");
@@ -16,13 +15,14 @@ const CadastroMaior = () => {
   const salvarMaiorDeDezoito = (event) =>{
     event.preventDefault();
 
-    fetch('',{
+    fetch('http://127.0.0.1:9000/responsavel/',{
       method: 'POST',
       body:JSON.stringify({
         nome: nome,
         idade: idade,
         cpf: cpf,
         cep: cep,
+        contato:contato,
         email: email,
         senha: senha,
       }),
@@ -33,7 +33,7 @@ const CadastroMaior = () => {
       return value.json()
     }).then(value => {
       if(value.id) {
-        alert('Doador criado com sucesso!');
+        alert('Cadastrado com sucesso!');
         
       } else{
         alert('Erro ao cadastrar!')
@@ -42,6 +42,7 @@ const CadastroMaior = () => {
       setIdade("");
       setCpf("");
       setCep("");
+      setContato("");
       setEmail("");
       setSenha("");
     })
@@ -59,6 +60,7 @@ const CadastroMaior = () => {
           label="Nome"
           placeholder="Digite seu nome completo"
           atualizarState={setNome}
+          obrigatorio
         />
          <Input
           value={idade}
@@ -66,6 +68,7 @@ const CadastroMaior = () => {
           label="Idade"
           placeholder="Digite sua idade"
           atualizarState={setIdade}
+          obrigatorio
         />
          <Input
           value={cpf}
@@ -73,21 +76,24 @@ const CadastroMaior = () => {
           label="CPF"
           placeholder="Digite seu cpf"
           atualizarState={setCpf}
+          obrigatorio
         />
          <Input
           value={cep}
           type="text"
-          label="Nome"
-          placeholder="Digite seu nome completo"
+          label="Cep"
+          placeholder="Digite seu cep"
           atualizarState={setCep}
+          obrigatorio
         />
-        <Genero/>
+       <Genero />
          <Input
           value={contato}
           type="text"
           label="Celular"
           placeholder="Digite o número do seu celular"
           atualizarState={setContato}
+          obrigatorio
         />
         <Input
           value={email}
@@ -95,6 +101,7 @@ const CadastroMaior = () => {
           label="Email"
           placeholder="Digite seu email"
           atualizarState={setEmail}
+          obrigatorio
         />
         <Input
           value={senha}
@@ -102,8 +109,9 @@ const CadastroMaior = () => {
           label="Senha"
           placeholder="Digite sua senha"
           atualizarState={setSenha}
+          obrigatorio
         />
-        <Botao>Cadastrar</Botao>
+        <input className="LALA" type='submit' value='Cadastrar' />
       </form>
     </div>
     );
