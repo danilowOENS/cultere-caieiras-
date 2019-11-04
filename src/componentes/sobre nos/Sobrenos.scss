@@ -1,0 +1,21 @@
+aside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+ #perfil{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+ }
+
+img{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    
+}
