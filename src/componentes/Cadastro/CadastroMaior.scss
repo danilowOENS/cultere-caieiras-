@@ -1,0 +1,29 @@
+.CadastroMaior {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #471521;
+    .Texto{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  form {
+    margin-left: 50px; 
+  .LALA{
+      border: none;
+      width: 220px;
+      height: 30px;
+      border: 2px solid #471521;
+      border-radius: 10px;
+      padding: 0 20px;
+      color: black;
+      outline: none;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
