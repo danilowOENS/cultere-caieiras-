@@ -1,6 +1,5 @@
-// @media (min-height: 320px), (min-width: 580px) {
-  .Navbar {
-    nav {
+.Navbar {
+  nav {
       width: 320px;
       height: 70px;
       background: linear-gradient(to right,#6d1345,#7e154f 20%, #df5442 );
@@ -66,5 +65,4 @@
       transform: translateX(0);
     }
   }
-// }
-
+// @media (min-height: 320px), (min-width: 580px) {
