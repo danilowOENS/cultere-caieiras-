@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Input from "../Input/Input";
-import Genero from "../Genero/Genero.js"
+
 import "./CadastroMaior.scss";
 
 const CadastroMaior = () => {
@@ -64,7 +64,7 @@ const CadastroMaior = () => {
           atualizarState={setNome}
           obrigatorio
         />
-        < Genero />
+  
          <Input
           value={idade}
           type="text"

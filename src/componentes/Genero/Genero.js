@@ -5,7 +5,7 @@ const Genero = () => {
     return(
         <div >
             <label className="Label">Gênero</label>
-            <select className="Genero">
+            <select className="Genero"> 
             <option className="escolha" disabled selected value="">Escolha o sexo</option>
             <option value="Feminino">Feminino</option>
             <option value="Masculino">Masculino</option>
